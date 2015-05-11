@@ -1,0 +1,16 @@
+{
+	"name": "http2-push-notice",
+	"version": "1.0.0",
+	"description": "Receive notice of resources being pushed",
+	"keywords": ["http2", "push", "reactivity"],
+	"main": "http2-push-notice.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/http2-push-notice"
+	},
+	"author": "rektide de la faye",
+	"license": "X"
+}
