@@ -1,6 +1,7 @@
 function makePushNotice(opts){
 	opts= opts|| {}
-	opts.emitter= opts.emitter|| new (require('events').EventEmitter)()
+	opts.emitterType= opts.emitterType|| require('events').EventEmitter
+	opts.emitter= opts.emitter|| new (opts.emitterType)()
 	opts.push= null
 
 	function pushNoticeHandler(req, res, cb){
@@ -8,7 +9,7 @@ function makePushNotice(opts){
 			if(!opts.push){
 				var push= req.push
 				opts.push= function(res){
-					opts.emitter.emit('push', res)
+					opts.emitter.emit('push', res, this.socket)
 					push.call(this, res)
 				}
 			}
